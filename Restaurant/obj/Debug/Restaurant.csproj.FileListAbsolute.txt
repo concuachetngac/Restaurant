@@ -1,0 +1,12 @@
+C:\Users\84398\Desktop\Restaurant\Restaurant\bin\Debug\Restaurant.exe.config
+C:\Users\84398\Desktop\Restaurant\Restaurant\bin\Debug\Restaurant.exe
+C:\Users\84398\Desktop\Restaurant\Restaurant\bin\Debug\Restaurant.pdb
+C:\Users\84398\Desktop\Restaurant\Restaurant\obj\Debug\Restaurant.csprojAssemblyReference.cache
+C:\Users\84398\Desktop\Restaurant\Restaurant\obj\Debug\Restaurant.Login.resources
+C:\Users\84398\Desktop\Restaurant\Restaurant\obj\Debug\Restaurant.Properties.Resources.resources
+C:\Users\84398\Desktop\Restaurant\Restaurant\obj\Debug\Restaurant.ManagerForm.Register.resources
+C:\Users\84398\Desktop\Restaurant\Restaurant\obj\Debug\Restaurant.csproj.GenerateResource.cache
+C:\Users\84398\Desktop\Restaurant\Restaurant\obj\Debug\Restaurant.csproj.CoreCompileInputs.cache
+C:\Users\84398\Desktop\Restaurant\Restaurant\obj\Debug\Restaurant.exe
+C:\Users\84398\Desktop\Restaurant\Restaurant\obj\Debug\Restaurant.pdb
+C:\Users\84398\Desktop\Restaurant\Restaurant\obj\Debug\Restaurant.employeeMainMenu.resources
