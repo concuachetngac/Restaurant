@@ -1,4 +1,4 @@
-﻿using Restaurant.ManagerCs;
+﻿using csFile.EmployeeCs;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,53 +10,23 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Restaurant.ManagerForm
+namespace Restaurant
 {
-    public partial class Register : Form
+    public partial class AddStaff : Form
     {
-        public Register()
+        public AddStaff()
         {
             InitializeComponent();
         }
 
-        private void closeLabel_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void Register_Load(object sender, EventArgs e)
+        private void phoneBox_TextChanged(object sender, EventArgs e)
         {
 
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void uploadPic_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog opf = new OpenFileDialog();
-            opf.Filter = "Select Image(*.jpg;*.png;*.gif)|*.jpg;*png;*gif";
-            if ((opf.ShowDialog() == DialogResult.OK))
-            {
-                pictureBox.Image = Image.FromFile(opf.FileName);
-            }
-        }
-
-        private void cancelButton_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
 
         private void addButton_Click(object sender, EventArgs e)
         {
-            Manager manager = new Manager();
+            Employee employee = new Employee();
             string lname = lnameBox.Text;
             string fname = fnameBox.Text;
             string phone = phoneBox.Text;
@@ -66,30 +36,32 @@ namespace Restaurant.ManagerForm
             DateTime bdate = bDateBox.Value.Date;
 
             MemoryStream pic = new MemoryStream();
-            if (manager.checkExis(username))
+            if (employee.checkExis(username))
             {
                 if (verif())
                 {
                     pictureBox.Image.Save(pic, pictureBox.Image.RawFormat);
-                    if (manager.addManager(fname, lname, username, password, bdate, phone, address, pic))
+                    if (employee.addEmployee(fname, lname, username, password, bdate, phone, address, pic))
                     {
-                        MessageBox.Show("Manager Added", "Add Manager", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Staff Added", "Add Staff", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     }
                     else
                     {
-                        MessageBox.Show("Error", "Add Manager", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Error", "Add Staff", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Empty Field", "Add Manager", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Empty Field", "Add Staff", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
-            } else 
+            }
+            else
             {
                 MessageBox.Show("Username Available !!!");
             }
-            
+
+
 
             bool verif()
             {
@@ -110,10 +82,24 @@ namespace Restaurant.ManagerForm
             }
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void closeLabel_Click(object sender, EventArgs e)
         {
+            this.Close();
+        }
 
+        private void updateButton_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog opf = new OpenFileDialog();
+            opf.Filter = "Select Image(*.jpg;*.png;*.gif)|*.jpg;*png;*gif";
+            if ((opf.ShowDialog() == DialogResult.OK))
+            {
+                pictureBox.Image = Image.FromFile(opf.FileName);
+            }
+        }
+
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
-
 }

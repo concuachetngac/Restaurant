@@ -30,7 +30,99 @@ namespace Restaurant
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(employeeMainMenu));
+            this.checkInButton = new System.Windows.Forms.Button();
+            this.checkOutButton = new System.Windows.Forms.Button();
+            this.calendatButton = new System.Windows.Forms.Button();
+            this.closeLabel = new System.Windows.Forms.Label();
+            this.myInfoButton = new System.Windows.Forms.Button();
+            this.imgPanel = new System.Windows.Forms.Panel();
+            this.welcomeLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
+            // 
+            // checkInButton
+            // 
+            this.checkInButton.BackColor = System.Drawing.Color.Transparent;
+            this.checkInButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.checkInButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.checkInButton.ForeColor = System.Drawing.Color.Black;
+            this.checkInButton.Location = new System.Drawing.Point(39, 534);
+            this.checkInButton.Name = "checkInButton";
+            this.checkInButton.Size = new System.Drawing.Size(148, 49);
+            this.checkInButton.TabIndex = 1;
+            this.checkInButton.Text = "Check in";
+            this.checkInButton.UseVisualStyleBackColor = false;
+            // 
+            // checkOutButton
+            // 
+            this.checkOutButton.BackColor = System.Drawing.Color.Transparent;
+            this.checkOutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.checkOutButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.checkOutButton.ForeColor = System.Drawing.Color.Black;
+            this.checkOutButton.Location = new System.Drawing.Point(219, 534);
+            this.checkOutButton.Name = "checkOutButton";
+            this.checkOutButton.Size = new System.Drawing.Size(148, 49);
+            this.checkOutButton.TabIndex = 2;
+            this.checkOutButton.Text = "Check out";
+            this.checkOutButton.UseVisualStyleBackColor = false;
+            // 
+            // calendatButton
+            // 
+            this.calendatButton.BackColor = System.Drawing.Color.Transparent;
+            this.calendatButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.calendatButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.calendatButton.ForeColor = System.Drawing.Color.Black;
+            this.calendatButton.Location = new System.Drawing.Point(405, 534);
+            this.calendatButton.Name = "calendatButton";
+            this.calendatButton.Size = new System.Drawing.Size(148, 49);
+            this.calendatButton.TabIndex = 3;
+            this.calendatButton.Text = "My Calendar";
+            this.calendatButton.UseVisualStyleBackColor = false;
+            // 
+            // closeLabel
+            // 
+            this.closeLabel.AutoSize = true;
+            this.closeLabel.BackColor = System.Drawing.Color.Transparent;
+            this.closeLabel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.closeLabel.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Bold);
+            this.closeLabel.ForeColor = System.Drawing.SystemColors.Control;
+            this.closeLabel.Location = new System.Drawing.Point(565, -2);
+            this.closeLabel.Name = "closeLabel";
+            this.closeLabel.Size = new System.Drawing.Size(22, 25);
+            this.closeLabel.TabIndex = 35;
+            this.closeLabel.Text = "x";
+            this.closeLabel.Click += new System.EventHandler(this.closeLabel_Click);
+            // 
+            // myInfoButton
+            // 
+            this.myInfoButton.BackColor = System.Drawing.Color.Transparent;
+            this.myInfoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.myInfoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.myInfoButton.ForeColor = System.Drawing.Color.Black;
+            this.myInfoButton.Location = new System.Drawing.Point(405, 452);
+            this.myInfoButton.Name = "myInfoButton";
+            this.myInfoButton.Size = new System.Drawing.Size(148, 49);
+            this.myInfoButton.TabIndex = 36;
+            this.myInfoButton.Text = "My Info";
+            this.myInfoButton.UseVisualStyleBackColor = false;
+            // 
+            // imgPanel
+            // 
+            this.imgPanel.Location = new System.Drawing.Point(22, 24);
+            this.imgPanel.Name = "imgPanel";
+            this.imgPanel.Size = new System.Drawing.Size(131, 151);
+            this.imgPanel.TabIndex = 37;
+            // 
+            // welcomeLabel
+            // 
+            this.welcomeLabel.AutoSize = true;
+            this.welcomeLabel.BackColor = System.Drawing.Color.Transparent;
+            this.welcomeLabel.Font = new System.Drawing.Font("Monotype Corsiva", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.welcomeLabel.ForeColor = System.Drawing.Color.White;
+            this.welcomeLabel.Location = new System.Drawing.Point(159, 24);
+            this.welcomeLabel.Name = "welcomeLabel";
+            this.welcomeLabel.Size = new System.Drawing.Size(74, 24);
+            this.welcomeLabel.TabIndex = 14;
+            this.welcomeLabel.Text = "Welcome";
             // 
             // employeeMainMenu
             // 
@@ -38,15 +130,30 @@ namespace Restaurant
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1453, 626);
+            this.ClientSize = new System.Drawing.Size(588, 626);
+            this.Controls.Add(this.welcomeLabel);
+            this.Controls.Add(this.imgPanel);
+            this.Controls.Add(this.myInfoButton);
+            this.Controls.Add(this.closeLabel);
+            this.Controls.Add(this.calendatButton);
+            this.Controls.Add(this.checkOutButton);
+            this.Controls.Add(this.checkInButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "employeeMainMenu";
             this.Text = "Employee Main Menu";
             this.Load += new System.EventHandler(this.employeeMainMenu_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+        private System.Windows.Forms.Button checkInButton;
+        private System.Windows.Forms.Button checkOutButton;
+        private System.Windows.Forms.Button calendatButton;
+        private System.Windows.Forms.Label closeLabel;
+        private System.Windows.Forms.Button myInfoButton;
+        private System.Windows.Forms.Panel imgPanel;
+        private System.Windows.Forms.Label welcomeLabel;
     }
 }

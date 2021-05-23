@@ -1,4 +1,7 @@
-﻿using Restaurant;
+﻿using csFile.EmployeeCs;
+using Restaurant;
+using Restaurant.csFile.MainCs;
+using Restaurant.ManagerCs;
 using Restaurant.ManagerForm;
 using System;
 using System.Collections.Generic;
@@ -50,13 +53,20 @@ namespace Restaurant
 
         private void loginButton_Click(object sender, EventArgs e)
         {
+            Manager manager = new Manager();
+            Employee employee = new Employee();
+
             if (managerRadio.Checked)
             {
                 if (managerLogin())
                 {
 
-                    MessageBox.Show("Ok, next time will be go to Manager Main Menu");
+                    MessageBox.Show("Ok, next time will be go to Manager Main Menu");                 
+                    ManagerMainMenu menu = new ManagerMainMenu();
 
+                    Global.setManagerID(manager.getIdByUsername(usernameBox.Text));
+
+                    menu.Show();
                 }
                 else
                 {
@@ -70,6 +80,9 @@ namespace Restaurant
 
                     MessageBox.Show("Ok, next time will be go to Employee Main Menu");
                     employeeMainMenu main = new employeeMainMenu();
+
+                    Global.setManagerID(employee.getIdByUsername(usernameBox.Text));
+
                     main.Show();
                 }
                 else
@@ -82,6 +95,7 @@ namespace Restaurant
 
         private bool managerLogin()
         {
+            Manager manager = new Manager();
             SqlCommand cmd = new SqlCommand("SELECT * FROM manager WHERE username=@username AND password=@password", mydb.getConnection);
             cmd.Parameters.Add("@username", SqlDbType.NVarChar).Value = usernameBox.Text;
             cmd.Parameters.Add("@password", SqlDbType.NVarChar).Value = passwordBox.Text;
@@ -91,7 +105,7 @@ namespace Restaurant
 
             mydb.openConnection();
 
-                if (table.Rows.Count > 0)
+            if (table.Rows.Count > 0)
             {
                 mydb.closeConnection();
                 return true;
@@ -105,6 +119,7 @@ namespace Restaurant
 
         private bool employeeLogin()
         {
+            Employee employee = new Employee();
             SqlCommand cmd = new SqlCommand("SELECT * FROM employee WHERE username=@username AND password=@password", mydb.getConnection);
             cmd.Parameters.Add("@username", SqlDbType.NVarChar).Value = usernameBox.Text;
             cmd.Parameters.Add("@password", SqlDbType.NVarChar).Value = passwordBox.Text;
@@ -114,7 +129,7 @@ namespace Restaurant
 
             mydb.openConnection();
 
-                if (table.Rows.Count > 0)
+            if (table.Rows.Count > 0)
             {
                 mydb.closeConnection();
                 return true;

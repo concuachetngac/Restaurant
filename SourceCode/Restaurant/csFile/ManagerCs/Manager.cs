@@ -62,5 +62,60 @@ namespace Restaurant.ManagerCs
 
             }
         }
+
+        public bool removeManager(int managerID)
+        {
+            SqlCommand cmd = new SqlCommand("DELETE FROM manager WHERE id = @id", mydb.getConnection);
+            cmd.Parameters.Add("@id", SqlDbType.Int).Value = managerID;
+
+            mydb.openConnection();
+
+            if (cmd.ExecuteNonQuery() == 1)
+            {
+                mydb.closeConnection();
+                return true;
+            }
+            else
+            {
+                mydb.closeConnection();
+                return false;
+            }
+        }
+
+        public int getIdByUsername(string username)
+        {
+            SqlCommand cmd = new SqlCommand("SELECT id FROM manager WHERE username=@username", mydb.getConnection);
+            cmd.Parameters.Add("@username", SqlDbType.NVarChar).Value = username;
+            SqlDataAdapter adpt = new SqlDataAdapter(cmd);
+            DataTable table = new DataTable();
+            adpt.Fill(table);
+
+            return Convert.ToInt32(table.Rows[0][0]);
+        }
+
+        public bool editStaff(int id, string fname, string lname, DateTime bdate, string username, string phone, string address, MemoryStream picture)
+        {
+            SqlCommand command = new SqlCommand("UPDATE listUser SET fname = @fname, lname = @lname, birthdate = @bdate, username = @username, phone = @phone, address = @adrs, picture = @picture WHERE user_id = @id", mydb.getConnection);
+            command.Parameters.Add("@id", System.Data.SqlDbType.Int).Value = id;
+            command.Parameters.Add("@fname", System.Data.SqlDbType.NVarChar).Value = fname;
+            command.Parameters.Add("@lname", System.Data.SqlDbType.NVarChar).Value = lname;
+            command.Parameters.Add("@bdate", System.Data.SqlDbType.DateTime).Value = bdate;
+            command.Parameters.Add("@username", System.Data.SqlDbType.NVarChar).Value = username;
+            command.Parameters.Add("@phone", System.Data.SqlDbType.NVarChar).Value = phone;
+            command.Parameters.Add("@adrs", System.Data.SqlDbType.NVarChar).Value = address;
+            command.Parameters.Add("@picture", System.Data.SqlDbType.Image).Value = picture.ToArray();
+            mydb.openConnection();
+
+            if ((command.ExecuteNonQuery() == 1))
+            {
+                mydb.closeConnection();
+                return true;
+            }
+            else
+            {
+                mydb.closeConnection();
+                return false;
+            }
+        }
     }
 }
