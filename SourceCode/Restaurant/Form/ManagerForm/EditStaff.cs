@@ -42,25 +42,31 @@ namespace Restaurant
 
         private void editButton_Click(object sender, EventArgs e)
         {
-            Manager manager = new Manager();
-            int id = Convert.ToInt32(IDBox.Text);
-            string fname = fnameBox.Text;
-            string lname = lnameBox.Text;
-            string username = usernameBox.Text;         
-            DateTime bdate = bDateBox.Value.Date;
-            string phone = phoneBox.Text;
-            string adrs = addressBox.Text;
-            MemoryStream picture = new MemoryStream();
-
-            pictureBox.Image.Save(picture, pictureBox.Image.RawFormat);
-
-            if (manager.editStaff(id, fname, lname, bdate, username, phone, adrs, picture))
+            try
             {
-                MessageBox.Show("The information was changed");
-            }
-            else
+                Manager manager = new Manager();
+                int id = Convert.ToInt32(IDBox.Text);
+                string fname = fnameBox.Text;
+                string lname = lnameBox.Text;
+                string username = usernameBox.Text;
+                DateTime bdate = bDateBox.Value.Date;
+                string phone = phoneBox.Text;
+                string adrs = addressBox.Text;
+                MemoryStream picture = new MemoryStream();
+
+                pictureBox.Image.Save(picture, pictureBox.Image.RawFormat);
+
+                if (manager.editStaff(id, fname, lname, bdate, username, phone, adrs, picture))
+                {
+                    MessageBox.Show("The information was changed");
+                }
+                else
+                {
+                    MessageBox.Show("There was an error");
+                }
+            } catch
             {
-                MessageBox.Show("There was an error");
+                MessageBox.Show("Please choose a Staff to edit !!!");
             }
         }
 

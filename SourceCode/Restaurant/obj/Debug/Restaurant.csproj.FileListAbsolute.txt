@@ -26,3 +26,9 @@ C:\Users\84398\Desktop\Restaurant\SourceCode\Restaurant\obj\Debug\Restaurant.csp
 C:\Users\84398\Desktop\Restaurant\SourceCode\Restaurant\obj\Debug\Restaurant.exe
 C:\Users\84398\Desktop\Restaurant\SourceCode\Restaurant\obj\Debug\Restaurant.pdb
 C:\Users\84398\Desktop\Restaurant\SourceCode\Restaurant\obj\Debug\Restaurant.EditStaff.resources
+C:\Users\84398\Desktop\Restaurant\SourceCode\Restaurant\obj\Debug\Restaurant.MyCalendar.resources
+C:\Users\84398\Desktop\Restaurant\SourceCode\Restaurant\obj\Debug\Restaurant.MyInfo.resources
+C:\Users\84398\Desktop\Restaurant\SourceCode\Restaurant\obj\Debug\Restaurant.ShowCalendar.resources
+C:\Users\84398\Desktop\Restaurant\SourceCode\Restaurant\obj\Debug\Restaurant.ChangePassword.resources
+C:\Users\84398\Desktop\Restaurant\SourceCode\Restaurant\obj\Debug\Restaurant.ChangeManagerPassword.resources
+C:\Users\84398\Desktop\Restaurant\SourceCode\Restaurant\obj\Debug\Restaurant.EditManager.resources

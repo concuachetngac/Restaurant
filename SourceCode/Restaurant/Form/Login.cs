@@ -79,9 +79,9 @@ namespace Restaurant
                 {
 
                     MessageBox.Show("Ok, next time will be go to Employee Main Menu");
-                    employeeMainMenu main = new employeeMainMenu();
+                    EmployeeMainMenu main = new EmployeeMainMenu();
 
-                    Global.setManagerID(employee.getIdByUsername(usernameBox.Text));
+                    Global.setStaffID(employee.getIdByUsername(usernameBox.Text));
 
                     main.Show();
                 }

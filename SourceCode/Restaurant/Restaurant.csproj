@@ -46,10 +46,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EditStaff.cs">
+    <Compile Include="EditManager.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditStaff.Designer.cs">
+    <Compile Include="EditManager.Designer.cs">
+      <DependentUpon>EditManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\ManagerForm\ChangeManagerPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\ManagerForm\ChangeManagerPassword.Designer.cs">
+      <DependentUpon>ChangeManagerPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\EmployeeForm\ChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\EmployeeForm\ChangePassword.Designer.cs">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\ManagerForm\EditStaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\ManagerForm\EditStaff.Designer.cs">
       <DependentUpon>EditStaff.cs</DependentUpon>
     </Compile>
     <Compile Include="Form\ManagerForm\AddStaff.cs">
@@ -88,6 +106,18 @@
     <Compile Include="Form\ManagerForm\ManagerMainMenu.Designer.cs">
       <DependentUpon>ManagerMainMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form\EmployeeForm\MyInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\EmployeeForm\MyInfo.Designer.cs">
+      <DependentUpon>MyInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\EmployeeForm\MyCalendar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\EmployeeForm\MyCalendar.Designer.cs">
+      <DependentUpon>MyCalendar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Form\ManagerForm\ShowFullStaff.cs">
       <SubType>Form</SubType>
@@ -95,7 +125,22 @@
     <Compile Include="Form\ManagerForm\ShowFullStaff.Designer.cs">
       <DependentUpon>ShowFullStaff.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="EditStaff.resx">
+    <Compile Include="Form\ManagerForm\ShowCalendar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\ManagerForm\ShowCalendar.Designer.cs">
+      <DependentUpon>ShowCalendar.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="EditManager.resx">
+      <DependentUpon>EditManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\ManagerForm\ChangeManagerPassword.resx">
+      <DependentUpon>ChangeManagerPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\EmployeeForm\ChangePassword.resx">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\ManagerForm\EditStaff.resx">
       <DependentUpon>EditStaff.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\ManagerForm\AddStaff.resx">
@@ -113,6 +158,12 @@
     <EmbeddedResource Include="Form\Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form\EmployeeForm\MyCalendar.resx">
+      <DependentUpon>MyCalendar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\EmployeeForm\MyInfo.resx">
+      <DependentUpon>MyInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -124,6 +175,9 @@
     </Compile>
     <EmbeddedResource Include="Form\ManagerForm\ShowFullStaff.resx">
       <DependentUpon>ShowFullStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\ManagerForm\ShowCalendar.resx">
+      <DependentUpon>ShowCalendar.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

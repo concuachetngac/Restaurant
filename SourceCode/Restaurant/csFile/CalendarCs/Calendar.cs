@@ -22,19 +22,12 @@ namespace csFile.CalendarCs
             DataTable table = employee.getAllEmployee();
 
             if(table.Rows.Count != 0) 
-            {
-                int final = table.Rows.Count;
-                if (Global.init > final) {
-                    Global.setInit(0);
-                    Global.setInitDatabase();
-                }
-                int init = Global.init;
-
+            {              
                 int day = 1;
                 int shift = 1;
                 for (; day <= 7; day++)
                 {
-                    loop(day, shift, table, init);
+                    loop(day, shift, table);
                 }
             } else
             {
@@ -69,19 +62,19 @@ namespace csFile.CalendarCs
             return table;
         }
 
-        public void loop(int day, int shift, DataTable table, int init)
+        public void loop(int day, int shift, DataTable table)
         {
             SqlCommand cmd = new SqlCommand("INSERT INTO calendar (day, shift, employee_id) VALUES (@day, @shift, @id)", mydb.getConnection);
             for (; shift <= 3; shift++)
             {
-                if (init >= table.Rows.Count - 1)
+                if (Global.init > table.Rows.Count - 1)
                 {
-                    init = 1;
+                    Global.setInit(0);
                 }
                 cmd.Parameters.Clear();
                 cmd.Parameters.Add("@day", SqlDbType.Int).Value = day;
                 cmd.Parameters.Add("@shift", SqlDbType.Int).Value = shift;
-                cmd.Parameters.Add("@id", SqlDbType.Int).Value = Convert.ToInt32(table.Rows[init][0]);
+                cmd.Parameters.Add("@id", SqlDbType.Int).Value = Convert.ToInt32(table.Rows[Global.init][0]);
 
                 mydb.openConnection();
 
@@ -94,7 +87,56 @@ namespace csFile.CalendarCs
                     mydb.closeConnection();
                 }
 
-                init++;
+                Global.increaseInit();
+                Global.setInitDatabase();
+
+            }
+        }
+
+        public string convertToDay(int dayNumb)
+        {
+            switch (dayNumb)
+            {
+                case 1:
+                    return "Monday";
+                case 2:
+                    return "Tuesday";
+                case 3:
+                    return "Wednesday";
+                case 4:
+                    return "Thursday";
+                case 5:
+                    return "Friday";
+                case 6:
+                    return "Saturday";
+                case 7:
+                    return "Sunday";
+                default: 
+                    return "";
+            }
+        }
+
+        public int convertToInt(string day)
+        {
+            switch (day)
+            {
+                case "Monday":
+                    return 1;
+                case "Tuesday":
+                    return 2;
+                case "Wednesday":
+                    return 3;
+                case "Thursday":
+                    return 4;
+                case "Friday":
+                    return 5;
+                case "Saturday":
+                    return 6;
+                case "Sunday":
+                    return 7;
+                default:
+                    return 0;
+
             }
         }
     }

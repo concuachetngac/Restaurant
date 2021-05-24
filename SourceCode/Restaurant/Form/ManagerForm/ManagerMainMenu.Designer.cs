@@ -50,6 +50,8 @@ namespace Restaurant
             this.imgPanel = new System.Windows.Forms.Panel();
             this.showCalendarButton = new System.Windows.Forms.Button();
             this.newCalendarButton = new System.Windows.Forms.Button();
+            this.changePasswordLabel = new System.Windows.Forms.Label();
+            this.editButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -129,7 +131,7 @@ namespace Restaurant
             this.addStaffButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addStaffButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
             this.addStaffButton.ForeColor = System.Drawing.Color.White;
-            this.addStaffButton.Location = new System.Drawing.Point(565, 576);
+            this.addStaffButton.Location = new System.Drawing.Point(565, 578);
             this.addStaffButton.Name = "addStaffButton";
             this.addStaffButton.Size = new System.Drawing.Size(148, 49);
             this.addStaffButton.TabIndex = 9;
@@ -282,6 +284,7 @@ namespace Restaurant
             this.showCalendarButton.TabIndex = 20;
             this.showCalendarButton.Text = "Show Calendar";
             this.showCalendarButton.UseVisualStyleBackColor = false;
+            this.showCalendarButton.Click += new System.EventHandler(this.showCalendarButton_Click);
             // 
             // newCalendarButton
             // 
@@ -297,6 +300,34 @@ namespace Restaurant
             this.newCalendarButton.UseVisualStyleBackColor = false;
             this.newCalendarButton.Click += new System.EventHandler(this.newCalendarButton_Click);
             // 
+            // changePasswordLabel
+            // 
+            this.changePasswordLabel.AutoSize = true;
+            this.changePasswordLabel.BackColor = System.Drawing.Color.Transparent;
+            this.changePasswordLabel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.changePasswordLabel.Font = new System.Drawing.Font("Monotype Corsiva", 15F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.changePasswordLabel.ForeColor = System.Drawing.Color.White;
+            this.changePasswordLabel.Location = new System.Drawing.Point(163, 139);
+            this.changePasswordLabel.Name = "changePasswordLabel";
+            this.changePasswordLabel.Size = new System.Drawing.Size(155, 24);
+            this.changePasswordLabel.TabIndex = 39;
+            this.changePasswordLabel.Text = "Change my password";
+            this.changePasswordLabel.Click += new System.EventHandler(this.changePasswordLabel_Click);
+            // 
+            // editButton
+            // 
+            this.editButton.BackColor = System.Drawing.Color.Transparent;
+            this.editButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.editButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.editButton.ForeColor = System.Drawing.Color.White;
+            this.editButton.Location = new System.Drawing.Point(43, 201);
+            this.editButton.Name = "editButton";
+            this.editButton.Size = new System.Drawing.Size(148, 49);
+            this.editButton.TabIndex = 40;
+            this.editButton.Text = "Edit";
+            this.editButton.UseVisualStyleBackColor = false;
+            this.editButton.Click += new System.EventHandler(this.editButton_Click);
+            // 
             // ManagerMainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -304,6 +335,8 @@ namespace Restaurant
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1544, 669);
+            this.Controls.Add(this.editButton);
+            this.Controls.Add(this.changePasswordLabel);
             this.Controls.Add(this.newCalendarButton);
             this.Controls.Add(this.showCalendarButton);
             this.Controls.Add(this.imgPanel);
@@ -353,5 +386,7 @@ namespace Restaurant
         private System.Windows.Forms.Panel imgPanel;
         private System.Windows.Forms.Button showCalendarButton;
         private System.Windows.Forms.Button newCalendarButton;
+        private System.Windows.Forms.Label changePasswordLabel;
+        private System.Windows.Forms.Button editButton;
     }
 }

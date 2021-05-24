@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Restaurant.csFile.MainCs;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -144,13 +145,50 @@ namespace csFile.EmployeeCs
         }
         public string getNameByID(int id)
         {
-            SqlCommand cmd = new SqlCommand("SELECT fname, lname FROM employee WHERE id=@id", mydb.getConnection);
+            try
+            {
+                SqlCommand cmd = new SqlCommand("SELECT fname, lname FROM employee WHERE id=@id", mydb.getConnection);
+                cmd.Parameters.Add("@id", SqlDbType.NVarChar).Value = id;
+                SqlDataAdapter adpt = new SqlDataAdapter(cmd);
+                DataTable table = new DataTable();
+                adpt.Fill(table);
+
+                return table.Rows[0][0].ToString() + " " + table.Rows[0][1].ToString();
+            }
+            catch
+            {
+                return "";
+            }
+        }
+
+        public DataTable getShift(int id)
+        {
+            SqlCommand cmd = new SqlCommand("SELECT day, shift FROM calendar WHERE employee_id=@id", mydb.getConnection);
             cmd.Parameters.Add("@id", SqlDbType.NVarChar).Value = id;
             SqlDataAdapter adpt = new SqlDataAdapter(cmd);
             DataTable table = new DataTable();
             adpt.Fill(table);
 
-            return table.Rows[0][0].ToString() + table.Rows[0][1].ToString();
+            return table;
+        }
+
+        public bool changePassword(string password)
+        {
+            SqlCommand cmd = new SqlCommand("UPDATE employee SET password=@pwd WHERE id=@id", mydb.getConnection);
+            cmd.Parameters.Add("@pwd", SqlDbType.NVarChar).Value = password;
+            cmd.Parameters.Add("@id", SqlDbType.Int).Value = Global.StaffID;
+
+            mydb.openConnection();
+
+            if(cmd.ExecuteNonQuery() > 0)
+            {
+                mydb.closeConnection();
+                return true;
+            } else
+            {
+                mydb.closeConnection();
+                return false;
+            }
         }
     }
 }

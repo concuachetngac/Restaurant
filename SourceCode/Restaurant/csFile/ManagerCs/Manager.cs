@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Restaurant.csFile.MainCs;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -39,6 +40,18 @@ namespace Restaurant.ManagerCs
                 mydb.closeConnection();
                 return false;
             }
+        }
+
+        public DataTable getManagerInfo(int id)
+        {
+            SqlCommand cmd = new SqlCommand("SELECT id, username, fname, lname, bdate, phone, address, picture FROM manager WHERE id=@id", mydb.getConnection);
+            cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
+            SqlDataAdapter adpt = new SqlDataAdapter(cmd);
+            DataTable table = new DataTable();
+
+            adpt.Fill(table);
+
+            return table;
         }
 
         public bool checkExis(string username)
@@ -95,7 +108,7 @@ namespace Restaurant.ManagerCs
 
         public bool editStaff(int id, string fname, string lname, DateTime bdate, string username, string phone, string address, MemoryStream picture)
         {
-            SqlCommand command = new SqlCommand("UPDATE listUser SET fname = @fname, lname = @lname, birthdate = @bdate, username = @username, phone = @phone, address = @adrs, picture = @picture WHERE user_id = @id", mydb.getConnection);
+            SqlCommand command = new SqlCommand("UPDATE employee SET fname = @fname, lname = @lname, bdate = @bdate, username = @username, phone = @phone, address = @adrs, picture = @picture WHERE id = @id", mydb.getConnection);
             command.Parameters.Add("@id", System.Data.SqlDbType.Int).Value = id;
             command.Parameters.Add("@fname", System.Data.SqlDbType.NVarChar).Value = fname;
             command.Parameters.Add("@lname", System.Data.SqlDbType.NVarChar).Value = lname;
@@ -107,6 +120,51 @@ namespace Restaurant.ManagerCs
             mydb.openConnection();
 
             if ((command.ExecuteNonQuery() == 1))
+            {
+                mydb.closeConnection();
+                return true;
+            }
+            else
+            {
+                mydb.closeConnection();
+                return false;
+            }
+        }
+
+        public bool editManager(int id, string fname, string lname, DateTime bdate, string username, string phone, string address, MemoryStream picture)
+        {
+            SqlCommand command = new SqlCommand("UPDATE employee SET fname = @fname, lname = @lname, bdate = @bdate, username = @username, phone = @phone, address = @adrs, picture = @picture WHERE id = @id", mydb.getConnection);
+            command.Parameters.Add("@id", System.Data.SqlDbType.Int).Value = id;
+            command.Parameters.Add("@fname", System.Data.SqlDbType.NVarChar).Value = fname;
+            command.Parameters.Add("@lname", System.Data.SqlDbType.NVarChar).Value = lname;
+            command.Parameters.Add("@bdate", System.Data.SqlDbType.DateTime).Value = bdate;
+            command.Parameters.Add("@username", System.Data.SqlDbType.NVarChar).Value = username;
+            command.Parameters.Add("@phone", System.Data.SqlDbType.NVarChar).Value = phone;
+            command.Parameters.Add("@adrs", System.Data.SqlDbType.NVarChar).Value = address;
+            command.Parameters.Add("@picture", System.Data.SqlDbType.Image).Value = picture.ToArray();
+            mydb.openConnection();
+
+            if ((command.ExecuteNonQuery() == 1))
+            {
+                mydb.closeConnection();
+                return true;
+            }
+            else
+            {
+                mydb.closeConnection();
+                return false;
+            }
+        }
+
+        public bool changePassword(string password)
+        {
+            SqlCommand cmd = new SqlCommand("UPDATE manager SET password=@pwd WHERE id=@id", mydb.getConnection);
+            cmd.Parameters.Add("@pwd", SqlDbType.NVarChar).Value = password;
+            cmd.Parameters.Add("@id", SqlDbType.Int).Value = Global.ManagerID;
+
+            mydb.openConnection();
+
+            if (cmd.ExecuteNonQuery() > 0)
             {
                 mydb.closeConnection();
                 return true;

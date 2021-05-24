@@ -100,5 +100,23 @@ namespace Restaurant
             EditStaff edit = new EditStaff();
             edit.Show();
         }
+
+        private void showCalendarButton_Click(object sender, EventArgs e)
+        {
+            ShowCalendar show = new ShowCalendar();
+            show.Show();
+        }
+
+        private void changePasswordLabel_Click(object sender, EventArgs e)
+        {
+            ChangeManagerPassword change = new ChangeManagerPassword();
+            change.Show();
+        }
+
+        private void editButton_Click(object sender, EventArgs e)
+        {
+            EditManager edit = new EditManager();
+            edit.Show();
+        }
     }
 }

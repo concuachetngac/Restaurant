@@ -1,7 +1,7 @@
 ﻿
 namespace Restaurant
 {
-    partial class employeeMainMenu
+    partial class EmployeeMainMenu
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace Restaurant
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(employeeMainMenu));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployeeMainMenu));
             this.checkInButton = new System.Windows.Forms.Button();
             this.checkOutButton = new System.Windows.Forms.Button();
             this.calendatButton = new System.Windows.Forms.Button();
@@ -37,6 +37,7 @@ namespace Restaurant
             this.myInfoButton = new System.Windows.Forms.Button();
             this.imgPanel = new System.Windows.Forms.Panel();
             this.welcomeLabel = new System.Windows.Forms.Label();
+            this.changePasswordLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // checkInButton
@@ -51,6 +52,7 @@ namespace Restaurant
             this.checkInButton.TabIndex = 1;
             this.checkInButton.Text = "Check in";
             this.checkInButton.UseVisualStyleBackColor = false;
+            this.checkInButton.Click += new System.EventHandler(this.checkInButton_Click);
             // 
             // checkOutButton
             // 
@@ -64,6 +66,7 @@ namespace Restaurant
             this.checkOutButton.TabIndex = 2;
             this.checkOutButton.Text = "Check out";
             this.checkOutButton.UseVisualStyleBackColor = false;
+            this.checkOutButton.Click += new System.EventHandler(this.checkOutButton_Click);
             // 
             // calendatButton
             // 
@@ -77,6 +80,7 @@ namespace Restaurant
             this.calendatButton.TabIndex = 3;
             this.calendatButton.Text = "My Calendar";
             this.calendatButton.UseVisualStyleBackColor = false;
+            this.calendatButton.Click += new System.EventHandler(this.calendatButton_Click);
             // 
             // closeLabel
             // 
@@ -104,6 +108,7 @@ namespace Restaurant
             this.myInfoButton.TabIndex = 36;
             this.myInfoButton.Text = "My Info";
             this.myInfoButton.UseVisualStyleBackColor = false;
+            this.myInfoButton.Click += new System.EventHandler(this.myInfoButton_Click);
             // 
             // imgPanel
             // 
@@ -124,13 +129,27 @@ namespace Restaurant
             this.welcomeLabel.TabIndex = 14;
             this.welcomeLabel.Text = "Welcome";
             // 
-            // employeeMainMenu
+            // changePasswordLabel
+            // 
+            this.changePasswordLabel.AutoSize = true;
+            this.changePasswordLabel.BackColor = System.Drawing.Color.Transparent;
+            this.changePasswordLabel.Font = new System.Drawing.Font("Monotype Corsiva", 15F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.changePasswordLabel.ForeColor = System.Drawing.Color.White;
+            this.changePasswordLabel.Location = new System.Drawing.Point(159, 151);
+            this.changePasswordLabel.Name = "changePasswordLabel";
+            this.changePasswordLabel.Size = new System.Drawing.Size(155, 24);
+            this.changePasswordLabel.TabIndex = 38;
+            this.changePasswordLabel.Text = "Change my password";
+            this.changePasswordLabel.Click += new System.EventHandler(this.changePasswordLabel_Click);
+            // 
+            // EmployeeMainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(588, 626);
+            this.Controls.Add(this.changePasswordLabel);
             this.Controls.Add(this.welcomeLabel);
             this.Controls.Add(this.imgPanel);
             this.Controls.Add(this.myInfoButton);
@@ -138,8 +157,9 @@ namespace Restaurant
             this.Controls.Add(this.calendatButton);
             this.Controls.Add(this.checkOutButton);
             this.Controls.Add(this.checkInButton);
+            this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "employeeMainMenu";
+            this.Name = "EmployeeMainMenu";
             this.Text = "Employee Main Menu";
             this.Load += new System.EventHandler(this.employeeMainMenu_Load);
             this.ResumeLayout(false);
@@ -155,5 +175,6 @@ namespace Restaurant
         private System.Windows.Forms.Button myInfoButton;
         private System.Windows.Forms.Panel imgPanel;
         private System.Windows.Forms.Label welcomeLabel;
+        private System.Windows.Forms.Label changePasswordLabel;
     }
 }
