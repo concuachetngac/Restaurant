@@ -85,6 +85,7 @@ namespace Restaurant
             this.panel21 = new System.Windows.Forms.Panel();
             this.panel22 = new System.Windows.Forms.Panel();
             this.panel23 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // mondayLabel
@@ -745,6 +746,17 @@ namespace Restaurant
             this.panel23.Size = new System.Drawing.Size(90, 3);
             this.panel23.TabIndex = 44;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Script MT Bold", 20F);
+            this.label4.Location = new System.Drawing.Point(12, 9);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(114, 33);
+            this.label4.TabIndex = 45;
+            this.label4.Text = "Calendar";
+            // 
             // ShowCalendar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -752,6 +764,7 @@ namespace Restaurant
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1689, 524);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.panel23);
             this.Controls.Add(this.panel22);
             this.Controls.Add(this.panel21);
@@ -873,5 +886,6 @@ namespace Restaurant
         private System.Windows.Forms.Panel panel21;
         private System.Windows.Forms.Panel panel22;
         private System.Windows.Forms.Panel panel23;
+        private System.Windows.Forms.Label label4;
     }
 }

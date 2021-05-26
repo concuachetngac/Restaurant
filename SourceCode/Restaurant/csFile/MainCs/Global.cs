@@ -12,8 +12,14 @@ namespace Restaurant.csFile.MainCs
 {
     public static class Global
     {
+        
 
-        static Global() { init = getInit(); ManagerID = 1234; StaffID = 1234; }
+        static Global() { init = getInit();
+            ManagerID = 1234;
+            StaffID = 1234;
+            StaffFine = 0;
+            ManagerFine = 0;
+        }
 
 
 
@@ -24,6 +30,22 @@ namespace Restaurant.csFile.MainCs
             ManagerID = id;
         }
 
+        public static int StaffFine { get; private set; }
+
+
+        public static void fine(int id)
+        {
+            StaffFine = id;
+        }
+
+        public static int ManagerFine { get; private set; }
+
+
+        public static void managerFine(int id)
+        {
+            ManagerFine = id;
+        }
+
 
 
         public static int StaffID { get; private set; }
@@ -31,6 +53,14 @@ namespace Restaurant.csFile.MainCs
         public static void setStaffID(int id)
         {
             StaffID = id;
+        }
+
+        public static int GlobalTableId { get; private set; }
+
+        public static void SetGlobalTableId(int TableID)
+        {
+            GlobalTableId = TableID;
+
         }
 
 
@@ -74,6 +104,30 @@ namespace Restaurant.csFile.MainCs
             SqlDataAdapter adpt = new SqlDataAdapter(cmd);
             DataTable table = new DataTable();
 
+            adpt.Fill(table);
+
+            return Convert.ToInt32(table.Rows[0][0]);
+        }
+
+        public static int getFine()
+        {
+            MY_DB mydb = new MY_DB();
+            SqlCommand cmd = new SqlCommand("SELECT pay_fines FROM salary WHERE employee_id=@id", mydb.getConnection);
+            cmd.Parameters.Add("@id", SqlDbType.Int).Value = StaffID;
+            SqlDataAdapter adpt = new SqlDataAdapter(cmd);
+            DataTable table = new DataTable();
+            adpt.Fill(table);
+
+            return Convert.ToInt32(table.Rows[0][0]);
+        }
+
+        public static int getManagerFine()
+        {
+            MY_DB mydb = new MY_DB();
+            SqlCommand cmd = new SqlCommand("SELECT pay_fines FROM manager_salary WHERE manager_id=@id", mydb.getConnection);
+            cmd.Parameters.Add("@id", SqlDbType.Int).Value = ManagerID;
+            SqlDataAdapter adpt = new SqlDataAdapter(cmd);
+            DataTable table = new DataTable();
             adpt.Fill(table);
 
             return Convert.ToInt32(table.Rows[0][0]);

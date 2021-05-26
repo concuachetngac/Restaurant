@@ -175,5 +175,15 @@ namespace Restaurant.ManagerCs
                 return false;
             }
         }
+        public DataTable getAllManager()
+        {
+            SqlCommand cmd = new SqlCommand("SELECT id, fname, lname, username, bdate, phone, address, picture FROM manager", mydb.getConnection);
+            SqlDataAdapter adpt = new SqlDataAdapter(cmd);
+            DataTable table = new DataTable();
+
+            adpt.Fill(table);
+
+            return table;
+        }
     }
 }

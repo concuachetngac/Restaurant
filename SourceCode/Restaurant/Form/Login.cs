@@ -1,4 +1,5 @@
 ﻿using csFile.EmployeeCs;
+using final_Project;
 using Restaurant;
 using Restaurant.csFile.MainCs;
 using Restaurant.ManagerCs;
@@ -141,5 +142,10 @@ namespace Restaurant
             }
         }
 
+        private void forCustomerLabel_Click(object sender, EventArgs e)
+        {
+            CustomerLogin login = new CustomerLogin();
+            login.Show();
+        }
     }
 }

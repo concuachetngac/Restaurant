@@ -48,6 +48,7 @@ namespace Restaurant
             this.editButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.closeLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -242,6 +243,20 @@ namespace Restaurant
             this.label2.TabIndex = 59;
             this.label2.Text = "Edit My Info";
             // 
+            // closeLabel
+            // 
+            this.closeLabel.AutoSize = true;
+            this.closeLabel.BackColor = System.Drawing.Color.Transparent;
+            this.closeLabel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.closeLabel.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Bold);
+            this.closeLabel.ForeColor = System.Drawing.SystemColors.Control;
+            this.closeLabel.Location = new System.Drawing.Point(318, -2);
+            this.closeLabel.Name = "closeLabel";
+            this.closeLabel.Size = new System.Drawing.Size(22, 25);
+            this.closeLabel.TabIndex = 60;
+            this.closeLabel.Text = "x";
+            this.closeLabel.Click += new System.EventHandler(this.closeLabel_Click);
+            // 
             // EditManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -249,6 +264,7 @@ namespace Restaurant
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(338, 640);
+            this.Controls.Add(this.closeLabel);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.editButton);
@@ -297,5 +313,6 @@ namespace Restaurant
         private System.Windows.Forms.Button editButton;
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label closeLabel;
     }
 }

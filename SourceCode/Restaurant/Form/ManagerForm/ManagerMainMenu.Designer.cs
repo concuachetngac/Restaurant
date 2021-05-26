@@ -38,8 +38,8 @@ namespace Restaurant
             this.label2 = new System.Windows.Forms.Label();
             this.addStaffButton = new System.Windows.Forms.Button();
             this.editStaffButton = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.tableButton = new System.Windows.Forms.Button();
+            this.dishButton = new System.Windows.Forms.Button();
             this.welcomeLabel = new System.Windows.Forms.Label();
             this.showStaffButton = new System.Windows.Forms.Button();
             this.removeStaffButton = new System.Windows.Forms.Button();
@@ -52,6 +52,10 @@ namespace Restaurant
             this.newCalendarButton = new System.Windows.Forms.Button();
             this.changePasswordLabel = new System.Windows.Forms.Label();
             this.editButton = new System.Windows.Forms.Button();
+            this.stockButton = new System.Windows.Forms.Button();
+            this.billButton = new System.Windows.Forms.Button();
+            this.showManagerButton = new System.Windows.Forms.Button();
+            this.accountingButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,6 +71,7 @@ namespace Restaurant
             this.checkInButton.TabIndex = 2;
             this.checkInButton.Text = "Check in";
             this.checkInButton.UseVisualStyleBackColor = false;
+            this.checkInButton.Click += new System.EventHandler(this.checkInButton_Click);
             // 
             // checkOutButton
             // 
@@ -80,6 +85,7 @@ namespace Restaurant
             this.checkOutButton.TabIndex = 3;
             this.checkOutButton.Text = "Check Out";
             this.checkOutButton.UseVisualStyleBackColor = false;
+            this.checkOutButton.Click += new System.EventHandler(this.checkOutButton_Click);
             // 
             // panel1
             // 
@@ -153,31 +159,33 @@ namespace Restaurant
             this.editStaffButton.UseVisualStyleBackColor = false;
             this.editStaffButton.Click += new System.EventHandler(this.editStaffButton_Click);
             // 
-            // button4
+            // tableButton
             // 
-            this.button4.BackColor = System.Drawing.Color.Transparent;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(1093, 578);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(148, 49);
-            this.button4.TabIndex = 11;
-            this.button4.Text = "Check in";
-            this.button4.UseVisualStyleBackColor = false;
+            this.tableButton.BackColor = System.Drawing.Color.Transparent;
+            this.tableButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.tableButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.tableButton.ForeColor = System.Drawing.Color.White;
+            this.tableButton.Location = new System.Drawing.Point(1093, 445);
+            this.tableButton.Name = "tableButton";
+            this.tableButton.Size = new System.Drawing.Size(148, 49);
+            this.tableButton.TabIndex = 11;
+            this.tableButton.Text = "Table";
+            this.tableButton.UseVisualStyleBackColor = false;
+            this.tableButton.Click += new System.EventHandler(this.tableButton_Click);
             // 
-            // button5
+            // dishButton
             // 
-            this.button5.BackColor = System.Drawing.Color.Transparent;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(1343, 578);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(148, 49);
-            this.button5.TabIndex = 12;
-            this.button5.Text = "Check in";
-            this.button5.UseVisualStyleBackColor = false;
+            this.dishButton.BackColor = System.Drawing.Color.Transparent;
+            this.dishButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.dishButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.dishButton.ForeColor = System.Drawing.Color.White;
+            this.dishButton.Location = new System.Drawing.Point(1343, 558);
+            this.dishButton.Name = "dishButton";
+            this.dishButton.Size = new System.Drawing.Size(148, 49);
+            this.dishButton.TabIndex = 12;
+            this.dishButton.Text = "Dishes";
+            this.dishButton.UseVisualStyleBackColor = false;
+            this.dishButton.Click += new System.EventHandler(this.dishButton_Click);
             // 
             // welcomeLabel
             // 
@@ -278,11 +286,11 @@ namespace Restaurant
             this.showCalendarButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.showCalendarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
             this.showCalendarButton.ForeColor = System.Drawing.Color.White;
-            this.showCalendarButton.Location = new System.Drawing.Point(43, 476);
+            this.showCalendarButton.Location = new System.Drawing.Point(565, 168);
             this.showCalendarButton.Name = "showCalendarButton";
             this.showCalendarButton.Size = new System.Drawing.Size(395, 49);
             this.showCalendarButton.TabIndex = 20;
-            this.showCalendarButton.Text = "Show Calendar";
+            this.showCalendarButton.Text = "Show Staff Calendar";
             this.showCalendarButton.UseVisualStyleBackColor = false;
             this.showCalendarButton.Click += new System.EventHandler(this.showCalendarButton_Click);
             // 
@@ -296,7 +304,7 @@ namespace Restaurant
             this.newCalendarButton.Name = "newCalendarButton";
             this.newCalendarButton.Size = new System.Drawing.Size(395, 49);
             this.newCalendarButton.TabIndex = 21;
-            this.newCalendarButton.Text = "New Calendar";
+            this.newCalendarButton.Text = "New Staff Calendar";
             this.newCalendarButton.UseVisualStyleBackColor = false;
             this.newCalendarButton.Click += new System.EventHandler(this.newCalendarButton_Click);
             // 
@@ -324,9 +332,65 @@ namespace Restaurant
             this.editButton.Name = "editButton";
             this.editButton.Size = new System.Drawing.Size(148, 49);
             this.editButton.TabIndex = 40;
-            this.editButton.Text = "Edit";
+            this.editButton.Text = "Edit Info";
             this.editButton.UseVisualStyleBackColor = false;
             this.editButton.Click += new System.EventHandler(this.editButton_Click);
+            // 
+            // stockButton
+            // 
+            this.stockButton.BackColor = System.Drawing.Color.Transparent;
+            this.stockButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.stockButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.stockButton.ForeColor = System.Drawing.Color.White;
+            this.stockButton.Location = new System.Drawing.Point(1093, 215);
+            this.stockButton.Name = "stockButton";
+            this.stockButton.Size = new System.Drawing.Size(148, 49);
+            this.stockButton.TabIndex = 41;
+            this.stockButton.Text = "Stock";
+            this.stockButton.UseVisualStyleBackColor = false;
+            this.stockButton.Click += new System.EventHandler(this.stockButton_Click);
+            // 
+            // billButton
+            // 
+            this.billButton.BackColor = System.Drawing.Color.Transparent;
+            this.billButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.billButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.billButton.ForeColor = System.Drawing.Color.White;
+            this.billButton.Location = new System.Drawing.Point(1343, 327);
+            this.billButton.Name = "billButton";
+            this.billButton.Size = new System.Drawing.Size(148, 49);
+            this.billButton.TabIndex = 42;
+            this.billButton.Text = "Bill";
+            this.billButton.UseVisualStyleBackColor = false;
+            this.billButton.Click += new System.EventHandler(this.billButton_Click);
+            // 
+            // showManagerButton
+            // 
+            this.showManagerButton.BackColor = System.Drawing.Color.Transparent;
+            this.showManagerButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.showManagerButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.showManagerButton.ForeColor = System.Drawing.Color.White;
+            this.showManagerButton.Location = new System.Drawing.Point(43, 491);
+            this.showManagerButton.Name = "showManagerButton";
+            this.showManagerButton.Size = new System.Drawing.Size(395, 49);
+            this.showManagerButton.TabIndex = 43;
+            this.showManagerButton.Text = "Show Manager Calendar";
+            this.showManagerButton.UseVisualStyleBackColor = false;
+            this.showManagerButton.Click += new System.EventHandler(this.showManagerButton_Click);
+            // 
+            // accountingButton
+            // 
+            this.accountingButton.BackColor = System.Drawing.Color.Transparent;
+            this.accountingButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.accountingButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.accountingButton.ForeColor = System.Drawing.Color.White;
+            this.accountingButton.Location = new System.Drawing.Point(43, 301);
+            this.accountingButton.Name = "accountingButton";
+            this.accountingButton.Size = new System.Drawing.Size(395, 49);
+            this.accountingButton.TabIndex = 44;
+            this.accountingButton.Text = "Accounting Salary";
+            this.accountingButton.UseVisualStyleBackColor = false;
+            this.accountingButton.Click += new System.EventHandler(this.accountingButton_Click);
             // 
             // ManagerMainMenu
             // 
@@ -335,6 +399,10 @@ namespace Restaurant
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1544, 669);
+            this.Controls.Add(this.accountingButton);
+            this.Controls.Add(this.showManagerButton);
+            this.Controls.Add(this.billButton);
+            this.Controls.Add(this.stockButton);
             this.Controls.Add(this.editButton);
             this.Controls.Add(this.changePasswordLabel);
             this.Controls.Add(this.newCalendarButton);
@@ -344,8 +412,8 @@ namespace Restaurant
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.showStaffButton);
             this.Controls.Add(this.welcomeLabel);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.dishButton);
+            this.Controls.Add(this.tableButton);
             this.Controls.Add(this.editStaffButton);
             this.Controls.Add(this.addStaffButton);
             this.Controls.Add(this.label2);
@@ -374,8 +442,8 @@ namespace Restaurant
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button addStaffButton;
         private System.Windows.Forms.Button editStaffButton;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button tableButton;
+        private System.Windows.Forms.Button dishButton;
         private System.Windows.Forms.Label welcomeLabel;
         private System.Windows.Forms.Button showStaffButton;
         private System.Windows.Forms.Button removeStaffButton;
@@ -388,5 +456,9 @@ namespace Restaurant
         private System.Windows.Forms.Button newCalendarButton;
         private System.Windows.Forms.Label changePasswordLabel;
         private System.Windows.Forms.Button editButton;
+        private System.Windows.Forms.Button stockButton;
+        private System.Windows.Forms.Button billButton;
+        private System.Windows.Forms.Button showManagerButton;
+        private System.Windows.Forms.Button accountingButton;
     }
 }

@@ -76,5 +76,10 @@ namespace Restaurant
             MemoryStream picture = new MemoryStream(pic);
             pictureBox.Image = Image.FromStream(picture);
         }
+
+        private void closeLabel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -57,37 +57,44 @@ namespace Restaurant.ManagerForm
         private void addButton_Click(object sender, EventArgs e)
         {
             Manager manager = new Manager();
-            string lname = lnameBox.Text;
-            string fname = fnameBox.Text;
-            string phone = phoneBox.Text;
-            string username = usernameBox.Text;
-            string password = passwordBox.Text;
-            string address = addressBox.Text;
-            DateTime bdate = bDateBox.Value.Date;
-
-            MemoryStream pic = new MemoryStream();
-            if (manager.checkExis(username))
+            if (manager.getAllManager().Rows.Count < 2)
             {
-                if (verif())
-                {
-                    pictureBox.Image.Save(pic, pictureBox.Image.RawFormat);
-                    if (manager.addManager(fname, lname, username, password, bdate, phone, address, pic))
-                    {
-                        MessageBox.Show("Manager Added", "Add Manager", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                string lname = lnameBox.Text;
+                string fname = fnameBox.Text;
+                string phone = phoneBox.Text;
+                string username = usernameBox.Text;
+                string password = passwordBox.Text;
+                string address = addressBox.Text;
+                DateTime bdate = bDateBox.Value.Date;
 
+                MemoryStream pic = new MemoryStream();
+                if (manager.checkExis(username))
+                {
+                    if (verif())
+                    {
+                        pictureBox.Image.Save(pic, pictureBox.Image.RawFormat);
+                        if (manager.addManager(fname, lname, username, password, bdate, phone, address, pic))
+                        {
+                            MessageBox.Show("Manager Added", "Add Manager", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("Error", "Add Manager", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Error", "Add Manager", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Empty Field", "Add Manager", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Empty Field", "Add Manager", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Username Available !!!");
                 }
-            } else 
+            } else
             {
-                MessageBox.Show("Username Available !!!");
+                MessageBox.Show("Maximum Manger is 2 !!!");
             }
             
 

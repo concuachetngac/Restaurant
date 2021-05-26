@@ -14,6 +14,7 @@ namespace Restaurant
 {
     public partial class AddStaff : Form
     {
+
         public AddStaff()
         {
             InitializeComponent();
@@ -26,6 +27,7 @@ namespace Restaurant
 
         private void addButton_Click(object sender, EventArgs e)
         {
+            
             Employee employee = new Employee();
             string lname = lnameBox.Text;
             string fname = fnameBox.Text;

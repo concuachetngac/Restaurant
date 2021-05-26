@@ -41,6 +41,7 @@ namespace Restaurant
             this.registerLabel = new System.Windows.Forms.Label();
             this.managerRadio = new System.Windows.Forms.RadioButton();
             this.employeeRadio = new System.Windows.Forms.RadioButton();
+            this.forCustomerLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -180,6 +181,20 @@ namespace Restaurant
             this.employeeRadio.Text = "Employee";
             this.employeeRadio.UseVisualStyleBackColor = false;
             // 
+            // forCustomerLabel
+            // 
+            this.forCustomerLabel.AutoSize = true;
+            this.forCustomerLabel.BackColor = System.Drawing.Color.Transparent;
+            this.forCustomerLabel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.forCustomerLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Underline);
+            this.forCustomerLabel.ForeColor = System.Drawing.SystemColors.Control;
+            this.forCustomerLabel.Location = new System.Drawing.Point(457, 275);
+            this.forCustomerLabel.Name = "forCustomerLabel";
+            this.forCustomerLabel.Size = new System.Drawing.Size(93, 19);
+            this.forCustomerLabel.TabIndex = 11;
+            this.forCustomerLabel.Text = "For Customer";
+            this.forCustomerLabel.Click += new System.EventHandler(this.forCustomerLabel_Click);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -188,6 +203,7 @@ namespace Restaurant
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(571, 302);
+            this.Controls.Add(this.forCustomerLabel);
             this.Controls.Add(this.employeeRadio);
             this.Controls.Add(this.managerRadio);
             this.Controls.Add(this.loginButton);
@@ -224,6 +240,7 @@ namespace Restaurant
         private System.Windows.Forms.Label registerLabel;
         private System.Windows.Forms.RadioButton managerRadio;
         private System.Windows.Forms.RadioButton employeeRadio;
+        private System.Windows.Forms.Label forCustomerLabel;
     }
 }
 

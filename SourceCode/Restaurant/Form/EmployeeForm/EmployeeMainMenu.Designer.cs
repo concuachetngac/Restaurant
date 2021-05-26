@@ -38,6 +38,9 @@ namespace Restaurant
             this.imgPanel = new System.Windows.Forms.Panel();
             this.welcomeLabel = new System.Windows.Forms.Label();
             this.changePasswordLabel = new System.Windows.Forms.Label();
+            this.salaryButton = new System.Windows.Forms.Button();
+            this.availableButton = new System.Windows.Forms.Button();
+            this.newSalaryDatabutton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // checkInButton
@@ -45,8 +48,8 @@ namespace Restaurant
             this.checkInButton.BackColor = System.Drawing.Color.Transparent;
             this.checkInButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.checkInButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.checkInButton.ForeColor = System.Drawing.Color.Black;
-            this.checkInButton.Location = new System.Drawing.Point(39, 534);
+            this.checkInButton.ForeColor = System.Drawing.Color.White;
+            this.checkInButton.Location = new System.Drawing.Point(405, 283);
             this.checkInButton.Name = "checkInButton";
             this.checkInButton.Size = new System.Drawing.Size(148, 49);
             this.checkInButton.TabIndex = 1;
@@ -59,8 +62,8 @@ namespace Restaurant
             this.checkOutButton.BackColor = System.Drawing.Color.Transparent;
             this.checkOutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.checkOutButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.checkOutButton.ForeColor = System.Drawing.Color.Black;
-            this.checkOutButton.Location = new System.Drawing.Point(219, 534);
+            this.checkOutButton.ForeColor = System.Drawing.Color.White;
+            this.checkOutButton.Location = new System.Drawing.Point(405, 360);
             this.checkOutButton.Name = "checkOutButton";
             this.checkOutButton.Size = new System.Drawing.Size(148, 49);
             this.checkOutButton.TabIndex = 2;
@@ -142,6 +145,48 @@ namespace Restaurant
             this.changePasswordLabel.Text = "Change my password";
             this.changePasswordLabel.Click += new System.EventHandler(this.changePasswordLabel_Click);
             // 
+            // salaryButton
+            // 
+            this.salaryButton.BackColor = System.Drawing.Color.Transparent;
+            this.salaryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.salaryButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.salaryButton.ForeColor = System.Drawing.Color.Black;
+            this.salaryButton.Location = new System.Drawing.Point(39, 534);
+            this.salaryButton.Name = "salaryButton";
+            this.salaryButton.Size = new System.Drawing.Size(328, 49);
+            this.salaryButton.TabIndex = 39;
+            this.salaryButton.Text = "Accounting Salary";
+            this.salaryButton.UseVisualStyleBackColor = false;
+            this.salaryButton.Click += new System.EventHandler(this.salaryButton_Click);
+            // 
+            // availableButton
+            // 
+            this.availableButton.BackColor = System.Drawing.Color.Transparent;
+            this.availableButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.availableButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.availableButton.ForeColor = System.Drawing.Color.Black;
+            this.availableButton.Location = new System.Drawing.Point(39, 452);
+            this.availableButton.Name = "availableButton";
+            this.availableButton.Size = new System.Drawing.Size(328, 49);
+            this.availableButton.TabIndex = 40;
+            this.availableButton.Text = "Available Shift";
+            this.availableButton.UseVisualStyleBackColor = false;
+            this.availableButton.Click += new System.EventHandler(this.availableButton_Click);
+            // 
+            // newSalaryDatabutton
+            // 
+            this.newSalaryDatabutton.BackColor = System.Drawing.Color.Transparent;
+            this.newSalaryDatabutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.newSalaryDatabutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.newSalaryDatabutton.ForeColor = System.Drawing.Color.White;
+            this.newSalaryDatabutton.Location = new System.Drawing.Point(39, 214);
+            this.newSalaryDatabutton.Name = "newSalaryDatabutton";
+            this.newSalaryDatabutton.Size = new System.Drawing.Size(180, 49);
+            this.newSalaryDatabutton.TabIndex = 41;
+            this.newSalaryDatabutton.Text = "New Salary Data";
+            this.newSalaryDatabutton.UseVisualStyleBackColor = false;
+            this.newSalaryDatabutton.Click += new System.EventHandler(this.newSalaryDatabutton_Click);
+            // 
             // EmployeeMainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -149,6 +194,9 @@ namespace Restaurant
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(588, 626);
+            this.Controls.Add(this.newSalaryDatabutton);
+            this.Controls.Add(this.availableButton);
+            this.Controls.Add(this.salaryButton);
             this.Controls.Add(this.changePasswordLabel);
             this.Controls.Add(this.welcomeLabel);
             this.Controls.Add(this.imgPanel);
@@ -176,5 +224,8 @@ namespace Restaurant
         private System.Windows.Forms.Panel imgPanel;
         private System.Windows.Forms.Label welcomeLabel;
         private System.Windows.Forms.Label changePasswordLabel;
+        private System.Windows.Forms.Button salaryButton;
+        private System.Windows.Forms.Button availableButton;
+        private System.Windows.Forms.Button newSalaryDatabutton;
     }
 }
